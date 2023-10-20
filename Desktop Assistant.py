@@ -32,7 +32,7 @@ def transcribe_audio():
         except sr.RequestError as e:
             print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
-'''
+
 def text_to_speech(text):
     client = texttospeech.TextToSpeechClient()
 
@@ -53,7 +53,7 @@ def text_to_speech(text):
     )
     play(audio)
 
-'''
+
 x=transcribe_audio
 
 class DesktopAssistant(QWidget):
