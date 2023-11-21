@@ -6,4 +6,3 @@ def gs(stxt):
     ''.join(url)
     webbrowser.open(url)
     return "search result has been displayed"
-gs('how to cook mohanthaal')
