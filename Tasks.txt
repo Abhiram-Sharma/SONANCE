@@ -3,14 +3,14 @@ _*_Tasks_*_
 ---------------------
 
 -Kushagra
-  PDF Reader
+  Chat GPT
   Spotify
   Camera
-  Alarm
+  
 
 -Krishna
   Reminder
-  Game
+  Alarm
   Google Search
   OTT
 
