@@ -1,23 +1,28 @@
 _*_Tasks_*_
 
 ---------------------
+-Abhiram
+  Speak
+  Listen
+  Command Prompt
+  Functions Integration
 
 -Kushagra
   Chat GPT
-  Spotify
-  Camera
+  Spotify<
+  Camera<
   
 
 -Krishna
-  Reminder
+  ToDo List<
   Alarm
-  Google Search
-  OTT
+  Google Search<
+  OTT<
 
 -Saksham
-  Youtube
-  ScreenShot
-  Send Message
+  Youtube<
+  ScreenShot<
+  Send Message<
 
 -Anirudh and Team
   PPT & presentation
