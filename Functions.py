@@ -1,6 +1,12 @@
 import webbrowser
 import os
-
+try:
+    import pygame
+    import pygame.camera
+except:
+    os.system(f'cmd /c "pip install pygame"')
+    import pygame
+    import pygame.camera
 try:
     import speech_recognition as sr
 except:
@@ -75,6 +81,12 @@ def spotify(txt):
         return f"Could not perform Function with Error Code {e}"
 def cmdpmt():
     os.system('cmd /k "date"') 
+def gs(stxt):
+    txt='+'.join(stxt.split())
+    url=f"https://www.google.com/search?q={txt}&btnK=Google+Search & sca_esv = 584340551 & sxsrf = AM9HkKn5DKm4gJ9l1ljkOoR2s3zlgmY3Bw % 3A1700588748625 & source = hp & ei = zOxcZf69I4f_ptQPsJ6h2Aw & iflsig = AO6bgOgAAAAAZVz63I84HNY - j7T7bGOddo - Mkh2IHr5m"
+    ''.join(url)
+    webbrowser.open(url)
+    return "search result has been displayed"
 def take_screenshot(num):
     try:
         screenshot = pyautogui.screenshot()
@@ -83,7 +95,7 @@ def take_screenshot(num):
     except Exception as e :
         print(f"Could not perform Function with Error Code {e}")
         return f"Could not perform Function with Error Code {e}"
-def ott(stxt):
+def anime(stxt):
     try:
         txt='+'.join(stxt.split())
         url=f'https://animension.to/search?search_text={txt}'
@@ -136,6 +148,7 @@ def addtodo(task):
 def viewtodo():
     try:
         td=openlist()
+        Speak("Items from your Todo List")
         for i in td:
             Speak(i)
         closelist(td)
@@ -151,3 +164,20 @@ def deletetodo(task):
         return f'{task} removed from todo list'
     except Exception as e:
         return f'Error code {e}'
+def capture_photo(num):
+    # Initialize Pygame
+    pygame.init()
+    pygame.camera.init()
+
+    # Get a list of available cameras
+    cameras = pygame.camera.list_cameras()
+    camera = pygame.camera.Camera(cameras[0])
+    camera.start()   
+    image = camera.get_image()
+
+    pygame.image.save(image,f"CamPic{num}.jpg")
+
+    camera.stop()
+    pygame.quit()
+
+    return "Photo has been captured"
