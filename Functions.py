@@ -10,7 +10,7 @@ except:
 try:
     import speech_recognition as sr
 except:
-    os.system(f'cmd /c "pip install speech_recognition"')
+    os.system(f'cmd /c "pip install speechrecognition"')
     import speech_recognition as sr
 try:
     from pyttsx3 import Engine
@@ -34,6 +34,11 @@ except:
     os.system(f'cmd /c "pip install openai"')
     from openai import OpenAI
     import ast
+try:
+    import pyaudio
+except:
+    os.system(f'cmd /c "pip install pyaudio"')
+    import pyaudio
 
 def gpt(txt):
     try:
@@ -113,18 +118,19 @@ def listen(txt):
     recognizer = sr.Recognizer()
     Speak(txt)
     # Create a microphone object
-    with sr.Microphone(device_index=3) as source:
-        print("Listening...")
+    with sr.Microphone(device_index=1) as source:
+        Speak("Listening")
         audio = recognizer.listen(source)
     # Transcribe the audio into text
     try:
+        Speak("Recognizing")
         text = recognizer.recognize_google(audio)
         #print("You said: {}".format(text))
     except:
         text="Not Recognizable"
     return text
 def openlist():
-    f=open('tododata.txt','r')
+    f=open(r"Sonance-main\todo.txt",'r')
     td=f.read()
     td=td.split('\n')
     f.close()
@@ -132,7 +138,7 @@ def openlist():
     return res
 def closelist(lst):
     res = [i for n, i in enumerate(lst) if i not in lst[:n]]
-    f=open('tododata.txt','w')
+    f=open(r'Sonance-main\todo.txt','w')
     for i in res:
         f.write(i+'\n')
     f.close()
