@@ -5,7 +5,7 @@ Speak("I am Sonance Your Personal Desktop Assistant")
 Speak("Try Giving Me a Command")
 n=0
 while x:
-    query=listen("I am Listening, Command me").lower()
+    query=listen("").lower()
     Speak(query)
     if "stop" in query or "quit"in query:
         Speak("Thank you For Allowing Me to Assist, Always at your service")
@@ -40,7 +40,7 @@ while x:
             Speak(addtodo(listen("What is the Task")))
         elif "view" in query_todo:
             Speak(viewtodo())
-        elif "delete" in query_todo:
+        elif "delete" in query_todo or "remove" in query_todo:
             Speak(deletetodo(listen("Which todo to remove")))
         else:
             Speak("Sorry could not understand what you wanted to do with todo list")
@@ -48,7 +48,7 @@ while x:
     elif "google" in query:
         Speak(gs(listen("What do you want to search for")))
         pass
-    elif query !="Not Recognizable":
+    elif "Not Recognizable" not in query:
         Speak(gpt(query))
         pass
     else:
